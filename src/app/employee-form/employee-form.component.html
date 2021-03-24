@@ -1,6 +1,19 @@
 <p>employee-form works!</p>
 <div class="employee-details">
-<h3>Employee Name: {{employee1.Name}}</h3>
-<div><span style="color:Blue">Employeee GradeId: </span>{{employee1.gradeId}}</div>
-<div><span>Employee GradeName: </span>{{employee1.gradeName}}</div>
+ <h3>Employee Name: {{employee1.Name}}</h3>
+  <div><span style="color:Blue">Employeee GradeId: </span>{{employee1.gradeId}}</div>
+  <div><span>Employee GradeName: </span>{{employee1.gradeName}}</div>
 </div>
+
+<div class="employee-details">
+ <form #employeeForm="ngForm">
+ 	{{diagnostic}}
+   <div>
+    <label for="Name">Name Of Employee</label>
+    <input  type="text" id="name"
+            required[(ngModel)]="employee1.Name" name="Name"/>
+   </div>
+ </form>
+</div>
+<button type="submit" class="btn btn-success">Submit</button>
+

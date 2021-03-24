@@ -8,11 +8,15 @@ import {Employee} from '../employee'
 })
 export class EmployeeFormComponent implements OnInit {
    
-   employee1:Employee={id:1,Name:'shyam agrahari',gradeId:132,gradeName:'1A*'};
+   employee1:Employee={id:1,Name:'shyam',gradeId:132,gradeName:'1A*'};
   constructor() { }
 
   ngOnInit(){
   
   }
+  submitted = false;
 
+  onSubmit() { this.submitted = true; }
+
+   get diagnostic() { return JSON.stringify(this.employee1); }
 }
