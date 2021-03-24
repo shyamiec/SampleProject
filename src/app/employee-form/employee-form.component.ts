@@ -6,17 +6,14 @@ import {Employee} from '../employee'
   templateUrl: './employee-form.component.html',
   styleUrls: ['./employee-form.component.css']
 })
-export class EmployeeFormComponent implements OnInit {
+export class EmployeeFormComponent{
    
-   employee1:Employee={id:1,Name:'shyam',gradeId:132,gradeName:'1A*'};
-  constructor() { }
+   employee1 = new Employee(1,'',132,'1A');
+   public submitted = false;
 
-  ngOnInit(){
-  
+  onSubmit()
+  {
+   if(this.submitted==false)
+    this.submitted = true;
   }
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
-   get diagnostic() { return JSON.stringify(this.employee1); }
 }
